@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+    /* colors */
+    --main-color: hsl(217, 54%, 11%);
+    --card-color: hsl(216, 50%, 16%);
+    --line-color: hsl(215, 32%, 27%);
+    --white-color: hsl(0, 0%, 100%);
+
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 18px;
+    overflow: hidden;
+}
+
+body {
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.card {
+    max-width: 20em;
+    height: auto;
+    background-color: var(--card-color);
+    font-family: 'outfit', sans-serif;
+    border-radius: 10px;
+    padding-bottom: .6em;
+    box-shadow: 0px 20px 25px 15px rgba(0, 0, 0, 0.05),
+        0px 40px 30px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card .image-container {
+    position: relative;
+    width: 17.45em;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 10px;
+    position: relative;
+    transition: .2s;
+}
+
+.card .main-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 17.45em;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 1.6em;
+    border-radius: 10px;
+    margin-top: 1.45em;
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.card .main-image:hover {
+    opacity: .5;
+}
+
+.card .image-container:hover {
+    background-color: var(--cyan);
+}
+
+.card .image-container:hover .eye {
+    opacity: 1;
+}
+
+.card .eye {
+    content: '';
+    background: url('images/icon-view.svg') center center / contain no-repeat;
+    position: absolute;
+    width: 2.5em;
+    height: 2.5em;
+    top: 39%;
+    left: 44%;
+    opacity: 0;
+    transition: .2s;
+    cursor: pointer;
+}
+
+
+.card h1 {
+    color: var(--white-color);
+    font-size: 1.42rem;
+    padding-left: .9em;
+    margin-bottom: .68em;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.card h1:hover {
+    color: var(--cyan);
+}
+
+.card p {
+    color: var(--soft-blue);
+    padding-left: 1.25em;
+    line-height: 1.6rem;
+    margin-bottom: 1em;
+}
+
+.card .price-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card .price-date .price {
+    font-weight: 600;
+    color: var(--cyan);
+    padding-left: 1.25em;
+    padding-top: .1em;
+}
+
+.card .price-date .date {
+    font-size: .96rem;
+    font-weight: 400;
+    color: var(--soft-blue);
+    padding-right: 1.42em;
+    padding-top: .12em;
+}
+
+.card .price-date .eth-icon,
+.date-icon {
+    vertical-align: middle;
+    padding-right: .4em;
+    padding-bottom: .2em;
+}
+
+.card .border-bottom {
+    border-bottom: 1px solid var(--line-color);
+    margin-top: .8em;
+    width: 17.5em;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.card .profile {
+    display: flex;
+    max-width: 17.5em;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: .36em;
+}
+
+.card .profile img {
+    width: 2.1em;
+    border: 1px solid var(--white-color);
+    border-radius: 50%;
+}
+
+.card .profile p {
+    margin-left: -.2em;
+    padding-top: .9em;
+    font-size: .96rem;
+}
+
+.card .profile p span {
+    color: var(--white-color);
+    cursor: pointer;
+    transition: .2s;
+}
+
+.card .profile p span:hover {
+    color: var(--cyan);
+}
+
+@media screen and (min-width: 80em) {
+
+    .card {
+        max-width: 23.3em;
+        height: 39.8em;
+    }
+
+    .card .image-container {
+        width: 20em;
+        margin-top: 1.68em;
+    }
+
+    .card .image-container .main-image {
+        width: 20em;
+    }
+
+    .card .t-p h1 {
+        font-size: 1.51rem;
+        margin-top: 1.25em;
+        margin-left: .15em;
+    }
+
+    .card .t-p p {
+        font-size: 1.2rem;
+        margin-top: 1em;
+        margin-left: .1em;
+        line-height: 1.45;
+    }
+
+    .card .price-date {
+        margin: 1.4em .2em;
+        font-size: 1.13rem;
+    }
+
+    .card .price-date .date {
+        font-size: 1.08rem;
+    }
+
+    .card .border-bottom {
+        border: 1px solid var(--line-color);
+        margin-top: -.15em;
+        width: 20.2em;
+    }
+
+    .card .profile {
+        margin-left: 1.55em;
+    }
+
+    .card .profile img {
+        width: 2.2em;
+        border: 1px solid var(--white-color);
+    }
+
+    .card .profile p {
+        font-size: 1.085rem;
+    }
+
+    .card .eye {
+        width: 3.1em;
+        height: 3.1em;
+        top: 42.3%;
+        left: 42.2%;
+    }
+}
